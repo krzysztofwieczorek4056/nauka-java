@@ -1,8 +1,8 @@
-package zadanie1_5;
+package zadania_jkozak_1;
 
 import java.util.Scanner;
 
-public class Main {
+public class zadanie1_5 {
     public static void main(String[] args) {
         System.out.println("zadanie jkozak 1.5 zakupy ratalne");
         boolean dane = true;
