@@ -24,3 +24,5 @@ public class zadanie2_3 {
 //2do4=16
 //2do5=32
 //2 do 6 = 64
+
+//Niepotrzebne dodanie miliona wywo³añ, a printowanie tylko tego co trzeba.. brak jakieœ brake czy coœ
