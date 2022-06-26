@@ -26,4 +26,5 @@ public class zadanie2_5 {
         }
     }
 }
-
+//brak œredniej arytmetycznej
+// zero mia³o byæ nie wliczane do danych

@@ -20,3 +20,4 @@ public class zadanie2_1 {
         }
     }
 }
+// petla while nadmiarowa
