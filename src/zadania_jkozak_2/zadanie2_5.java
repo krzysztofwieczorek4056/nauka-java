@@ -21,13 +21,13 @@ public class zadanie2_5 {
                 System.out.println("srednia artytmetyczna" + srednia);
             }
 
-//            if (lidzbaMin < liczby) {
-//                lidzbaMin = liczby;
-//            }
+            if (lidzbaMin < liczby) {
+                lidzbaMin = liczby;
+            }
             if (liczby < liczbaMax) {
                 liczbaMax = liczby;
-            } else
-               lidzbaMin = liczby;
+
+            }
         }
     }
 }
