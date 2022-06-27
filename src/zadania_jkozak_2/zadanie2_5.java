@@ -8,21 +8,26 @@ public class zadanie2_5 {
         boolean numberZero = true;
         int liczbaMax = 0;
         int lidzbaMin = 0;
+
         while (numberZero) {
             Scanner scanner = new Scanner(System.in);
             int liczby = scanner.nextInt();
-
-            if (liczby > lidzbaMin) {
-                lidzbaMin = liczby;
-            }
-            if (liczby < liczbaMax) {
-                liczbaMax = liczby;
-            }
+            double suma = liczbaMax + lidzbaMin;
+            double srednia = suma / 2;
 
             if (liczby == 0) {
                 numberZero = false;
-                System.out.println(lidzbaMin + " " + liczbaMax);
+                System.out.println("suma max i min : " + suma);
+                System.out.println("srednia artytmetyczna" + srednia);
             }
+
+//            if (lidzbaMin < liczby) {
+//                lidzbaMin = liczby;
+//            }
+            if (liczby < liczbaMax) {
+                liczbaMax = liczby;
+            } else
+               lidzbaMin = liczby;
         }
     }
 }
