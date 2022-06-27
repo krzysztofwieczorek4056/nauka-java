@@ -7,16 +7,21 @@ public class zadanie2_3 {
         System.out.println("zadanie jvkozak2.3");
         System.out.println("daj dodatnia lidzbe bedziem potegowac");
         Scanner szukajka = new Scanner(System.in);
-        int lidzbaMax = szukajka.nextInt();
-        for (int i = 0; i < lidzbaMax; i++) {
+        int liczbaMax = szukajka.nextInt();
+        for (int i = 0; i < liczbaMax; i++ ) {
             int potega = (int) Math.pow(2, i);
-            if (potega < lidzbaMax) {
-                System.out.println(potega);
-            }
 
+            if (potega < liczbaMax) {
+
+            }
+            if (potega>=liczbaMax){
+                break;
+            }
+            System.out.println(potega);
+        }
         }
     }
-}
+
 
 // lidzby potegi czy dla 2 do potegi zeby wyszlo 2 wychodzi 2do1
 // 2do 2=i4
