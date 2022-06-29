@@ -16,22 +16,21 @@ public class zadanie2_7 {
         int a = scanner.nextInt();
         System.out.println("podaj szerokosc boku");
         int b = scanner.nextInt();
-        for (int l = 0; l < x; l++) {
-            if (l > 0)
-                System.out.println();
-            for (int k = 0; k < y; k++) {
+        for (int l = 1; l < x; l++)
+            System.out.println();
+//            for (int k = 0; k < y; k++) {
+//                System.out.print("_");
+//            }
+
+        for (int i = 0; i < a; i++) {
+            if (i > 0)
+                System.out.println(" ");
+            for (int m = 0; m < y; m++) {
                 System.out.print("_");
             }
-        }
-        for (int i = 0; i < a; i++) {
-            if (i > 0){
-                System.out.println(" ");
-            for (int m = 0; m < y; m++)
-            {
-                System.out.print("_");}}
             for (int j = 0; j < b; j++) {
 
-                System.out.print(znak );
+                System.out.print(znak);
             }
         }
     }
