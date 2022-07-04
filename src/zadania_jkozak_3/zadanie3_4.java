@@ -9,7 +9,9 @@ public class zadanie3_4 {
         int[] tablica = new int[32];
         int i = 0;
         boolean pierwszy = true;
+        boolean znak = true;
         int licznikPêtli = 0;
+        int bitZnaku;
         System.out.println("zadanie jkozak 3.4");
         Scanner scanner = new Scanner(System.in);
         liczba = scanner.nextInt();
@@ -18,6 +20,11 @@ public class zadanie3_4 {
         System.out.println(Integer.toBinaryString(liczba));
         //pêtla do sprawdzania jak dzieli i jakie zostawia reszty
         System.out.println("tu wyskakuja dzielenia i reszty z dzieleñ do pomocy");
+        if (liczba < 0) {
+            bitZnaku = 1;
+        } else {
+            bitZnaku = 0;
+        }
         while (liczba >= 1) {
 
             if (pierwszy) {
@@ -36,11 +43,23 @@ public class zadanie3_4 {
                 licznikPêtli++;
                 System.out.println(liczba + " " + reszta);
             }
+//            if (znak) {
+//                tablica[i] = bitZnaku;
+//                i++;
+//                znak = false;
+//            }
             if (liczba == 1) {
                 break;
             }
         }
+        if (liczba>0) {
+            tablica[i] = bitZnaku;
+            i++;
+//            znak = false;
+        }
+
         while (liczba < 0) {
+
             if (pierwszy) {
                 reszta = -liczba % 2;
                 tablica[i] = reszta;
@@ -57,26 +76,45 @@ public class zadanie3_4 {
                 licznikPêtli++;
                 System.out.println(liczba + " " + reszta);
             }
+//            if (znak) {
+//                tablica[i] = bitZnaku;
+//                i++;
+//                znak = false;
+//            }
             if (liczba == -1) {
                 break;
             }
 
+        }
+        if (liczba<0) {
+            tablica[i] = bitZnaku;
+            i++;
+//            znak = false;
         }
         if (liczba == 0) {
             tablica[i] = liczba;
             licznikPêtli++;
         }
         System.out.println("gotowe rozwiazanie z wykorzystaniem tablicy ");
-        for (i = licznikPêtli - 1; i >= 0; i--) {
-            if(liczba>0){
-            System.out.print(tablica[i]);}
-            if (liczba<0){
-                if(i == licznikPêtli-1){
-                System.out.print("1." );
+        if (liczba > 0) {
+            for (i = licznikPêtli; i >= 0; i--) {
+                if (i == licznikPêtli) {
+                    System.out.print(tablica[i] + ".");
+                } else {
+                    System.out.print(tablica[i]);
+                }
             }
-                System.out.print(tablica[i]);;
+        }
+        if (liczba < 0) {
+            for (i = licznikPêtli - 1; i >= 0; i--) {
+                if (i == licznikPêtli - 1) {
+                    System.out.print(tablica[i] + ".");
+                }
+                System.out.print(tablica[i]);
+
+            }
         }
     }
-}}
+}
 
 //1100100
