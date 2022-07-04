@@ -40,15 +40,43 @@ public class zadanie3_4 {
                 break;
             }
         }
+        while (liczba < 0) {
+            if (pierwszy) {
+                reszta = -liczba % 2;
+                tablica[i] = reszta;
+                System.out.println(liczba + " " + reszta);
+                pierwszy = false;
+                i++;
+                licznikPêtli++;
+            }
+            if (liczba < -1) {
+                liczba = liczba / 2;
+                reszta = -liczba % 2;
+                tablica[i] = reszta;
+                i++;
+                licznikPêtli++;
+                System.out.println(liczba + " " + reszta);
+            }
+            if (liczba == -1) {
+                break;
+            }
+
+        }
         if (liczba == 0) {
             tablica[i] = liczba;
             licznikPêtli++;
         }
         System.out.println("gotowe rozwiazanie z wykorzystaniem tablicy ");
         for (i = licznikPêtli - 1; i >= 0; i--) {
-            System.out.print(tablica[i]);
+            if(liczba>0){
+            System.out.print(tablica[i]);}
+            if (liczba<0){
+                if(i == licznikPêtli-1){
+                System.out.print("1." );
+            }
+                System.out.print(tablica[i]);;
         }
     }
-}
+}}
 
-
+//1100100
