@@ -60,7 +60,7 @@ public class zadanie3_5 {
                 if (reszta == 0) {
                     reszta = reszta + 1;
                 } else {
-                    reszta = reszta - 1;
+                    reszta = 0;
                 }
                 tablica[i] = reszta;
                 System.out.println(liczbaZU1 + " " + reszta);
@@ -74,7 +74,7 @@ public class zadanie3_5 {
                 if (reszta == 0) {
                     reszta = reszta + 1;
                 } else {
-                    reszta = reszta - 1;
+                    reszta = 0;
                 }
                 tablica[i] = reszta;
                 i++;
@@ -94,7 +94,7 @@ public class zadanie3_5 {
                 if (reszta == 0) {
                     reszta = reszta + 1;
                 } else {
-                    reszta = reszta - 1;
+                    reszta = 0;
                 }
                 tablica2[j] = reszta;
                 System.out.println(liczbaZU2 + " " + reszta);
@@ -108,7 +108,7 @@ public class zadanie3_5 {
                 if (reszta == 0) {
                     reszta = reszta + 1;
                 } else {
-                    reszta = reszta - 1;
+                    reszta = 0;
                 }
                 tablica2[j] = reszta;
                 j++;
