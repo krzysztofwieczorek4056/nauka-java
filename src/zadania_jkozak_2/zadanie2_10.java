@@ -9,7 +9,7 @@ public class zadanie2_10 {
         Scanner scanner = new Scanner(System.in);
         int liczba = scanner.nextInt();
         System.out.println("dzielnik liczby : ");
-        for (int i = 1; i < liczba; i++) {
+        for (int i = 1; i <= liczba; i++) {
             if (liczba % i == 0) {
 
                 System.out.println(i);
