@@ -8,16 +8,13 @@ public class zadanie2_11 {
         System.out.println("podaj liczbe");
         Scanner scanner = new Scanner(System.in);
         int liczba = scanner.nextInt();
-//        for (int i = 2; i < liczba; i++)
-//        {
-//            if (liczba % i == 0)
-//            {
-//                System.out.println("to jest liczba z³ozona");
-//            }
-////            else
-//            {
-//                System.out.println("to jest liczba pierwsza");
-//            }
-//        }
-//    }
-    }}
+        for (int i = 2; i < liczba; i++) {
+            if (liczba % i == 0) {
+                System.out.println("to jest liczba z³ozona");
+            } else {
+                System.out.println("to jest liczba pierwsza");
+            }
+        }
+    }
+}
+

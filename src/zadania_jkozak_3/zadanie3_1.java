@@ -8,7 +8,7 @@ public class zadanie3_1 {
         int lidzbaNajmniejsza = 0;
         int libdzaNajwieksza = 0;
         int sumaTablicy =0;
-        int sredniaArytmetyczna = 0;
+        int sredniaArytmetyczna;
         int lidzbaZmiennychNiejszychOdSredniej = 0;
         int lidzbaZmiennychWiekszychOdSredniej = 0;
 
