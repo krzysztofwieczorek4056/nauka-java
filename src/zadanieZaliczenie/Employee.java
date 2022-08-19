@@ -1,11 +1,14 @@
 package zadanieZaliczenie;
 
+import java.text.DecimalFormat;
+
 public class Employee {
+    private static final DecimalFormat df = new DecimalFormat("0.00");
     private String name;
     private String surname;
     private char sex;
     private int unitNumber;
-    private float salary;
+    private double salary;
     private int age;
     private int childNumber;
     private boolean civilStatus;
@@ -41,7 +44,7 @@ public class Employee {
     public String toStringShort() {
         return "Imie: " + name + "\r\n" +
                 "Nazwisko: " + surname + "\r\n" +
-                "Pesja :" + salary;
+                "Pesja :" + df.format(salary);
     }
 
     public String toStringUpperCase() {
@@ -54,5 +57,18 @@ public class Employee {
         }else {
             return false;
         }
+    }
+
+    public void getRise(int percent) {
+        System.out.println("Old salary: " + salary);
+        if(childNumber != 0){
+            percent = percent + childNumber*2;
+        }
+        if(civilStatus){
+            percent = percent + 3;
+        }
+        double incise = salary * ((double)percent/100);
+        salary = salary + incise;
+        System.out.println("New Salary: " +  salary);
     }
 }
