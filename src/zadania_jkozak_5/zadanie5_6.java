@@ -13,9 +13,7 @@ public class zadanie5_6 {
     public static int stringToInt(String text) {
         StringBuilder bolid = new StringBuilder();
         int pusty;
-        pusty = 0;
         boolean isNegative = false;
-        int pusty1;
         char[] tab = text.toCharArray();
         for (char s : tab) {
             if (s == 43 || s == 45) {
@@ -27,14 +25,10 @@ public class zadanie5_6 {
             }
 
         }
-        if(isNegative){
-            bolid.insert(0,"-");
+        if (isNegative) {
+            bolid.insert(0, "-");
         }
-        pusty1 = Integer.parseInt(bolid.toString());
-        pusty = pusty1;
-        if (tab[0] ==43){
-            pusty = -pusty;
-        }
+        pusty = Integer.parseInt(bolid.toString());
         return pusty;
     }
 }
