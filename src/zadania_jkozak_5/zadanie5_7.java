@@ -28,6 +28,7 @@ if (cont){
     
 }
  else if (none) {
+
      positionIndex = 0;
 }
 
