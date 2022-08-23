@@ -12,15 +12,23 @@ public class zadanie5_6 {
 
     public static int stringToInt(String text) {
         StringBuilder bolid = new StringBuilder();
+        StringBuilder bolid2 = new StringBuilder();
         int pusty;
         boolean isNegative = false;
+        boolean isMulitplication = false;
         char[] tab = text.toCharArray();
         for (char s : tab) {
             if (s == 43 || s == 45) {
                 isNegative = true;
             } else if (s > 47 && s < 58) {
-                bolid.append(s);
-            } else {
+                if(isMulitplication) {
+                    bolid.append(s);
+                }else {
+                    bolid2.append(s);
+                }
+            }else if(s == 101){
+                isMulitplication = true;
+            }else {
                 break;
             }
 
@@ -28,7 +36,11 @@ public class zadanie5_6 {
         if (isNegative) {
             bolid.insert(0, "-");
         }
+
         pusty = Integer.parseInt(bolid.toString());
+        if(isMulitplication){
+            pusty = pusty * ((int) Math.pow(10,Integer.parseInt(bolid2.toString()))); //to chujowo coś liczy ale ogarniasz
+        }
         return pusty;
     }
 }
