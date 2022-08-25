@@ -37,3 +37,15 @@ public class zadanie5_7 {
 
     }
 }
+
+//podaj text
+//ala ma alaa
+//podaj co chcesz znalezc w tekscie
+//ala
+//10
+
+//znajdujesz ostatni znak w where taki jaki jest pierwszy w what
+
+// w danym przypadku ala ma ala'a' <-
+
+//do poprawy
