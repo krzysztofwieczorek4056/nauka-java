@@ -1,6 +1,6 @@
 package zadania_jkozak_5;
 
-import java.util.Objects;
+
 import java.util.Scanner;
 
 public class zadanie5_7 {
@@ -12,22 +12,34 @@ public class zadanie5_7 {
         System.out.println("podaj co chcesz znalezc w tekscie");
         String where = scanner.nextLine();
         System.out.println(starFind(what, where));
+        System.out.println(what.indexOf(where));
     }
 
     public static int starFind(String what, String where) {
         int positionIndex = 0;
+        String zmieniony;
         boolean cont = what.contains(where);
+        // ustawiam zmiany Stringa where na "!", wczesniej wycinam "!" z what wiec logika zachowana.
+        if (what.contains("!")) {
+            what = what.replace("!", "#");
+        }
+
         if (where.equals("")) {
             return positionIndex;
         }
         if (cont) {
-            String first = String.valueOf(where.charAt(0));
-            String[] tab = what.split("");
-            for (int i = 0; i < what.length(); i++) {
-                if (Objects.equals(tab[i], first)) {
-                    positionIndex = i;
+
+            String space = "!";
+            zmieniony = what.replaceFirst(where, space);
+            System.out.println(zmieniony);
+
+            String[] tab = zmieniony.split("");
+            for (int i = 0; i < zmieniony.length(); i++) {
+                if (tab[i].matches(space)) {
+                    positionIndex=i;
 
                 }
+
             }
 
         } else {
