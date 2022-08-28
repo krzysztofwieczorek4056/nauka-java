@@ -13,14 +13,14 @@ public class zadanie5_10 {
         String what = scanner.nextLine();
         System.out.println(find(where, what));
     }
-
+// ugaduje sie na zmiane znaku. wycinka tak zeby sie nie pojawi³ jest w 5.7
     public static int find(String where, String what) {
         int numberOfFind = 0;
         if (where.contains(what)) {
-            String replaced = where.replace(what, "s");
+            String replaced = where.replace(what, "&");
             String[] tab = replaced.split("");
             for (String s : tab) {
-                if (s.matches("s")) {
+                if (s.matches("&")) {
                     numberOfFind++;
                 }
             }
