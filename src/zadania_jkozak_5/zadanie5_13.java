@@ -13,32 +13,27 @@ public class zadanie5_13 {
         int pomocniczy;
         int licznik = 0;
         int jeden = 1;
-        boolean xd= true;
 
         while (licznik <= text.length()) {
             for (int i = 0; i < text.length(); i++) {
+                boolean isUsed = false;
                 pomocniczy = scanner.nextInt();
-                if (i > 0) {
-                    if (tab[i-1]==pomocniczy) {
-                        System.out.println("z³y nie liczy sie");
-                        i--;
-                        licznik--;
-                        xd = false;
+                for (int used : tab) {
+                    if (used == pomocniczy) {
+                        isUsed = true;
                     }
                 }
-
-                if (pomocniczy <= text.length() && xd) {
+                if (pomocniczy <= text.length() && !isUsed) {
                     tab[i] = pomocniczy;
 
                     System.out.println("dobra liczba  " + jeden);
                     jeden++;
-                } else if (pomocniczy > text.length()) {
-                    System.out.println("z³y nie liczy sie");
+                } else if (pomocniczy > text.length() || isUsed) {
+                    System.out.println("zï¿½y nie liczy sie");
                     i--;
                     licznik--;
                 }
                 licznik++;
-                xd = true;
             }
             if (licznik == tab.length) {
                 break;
@@ -50,8 +45,3 @@ public class zadanie5_13 {
         }
     }
 }
-
-//t=0
-//e=1
-//x=2
-//t=3
