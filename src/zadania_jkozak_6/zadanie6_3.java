@@ -1,12 +1,12 @@
 package zadania_jkozak_6;
 
 import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class zadanie6_3 {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws IOException {
         System.out.println("zadanie j.kozak 6.3");
         String nazwaPliku = "text2.txt";
         String nazwaPlikuWyj = "tekstwyjsciowy.txt";
@@ -14,13 +14,11 @@ public class zadanie6_3 {
 
     }
 
-    public static void sumujIZapisz(String nazwaPliku, String nazwaPlikuWyj) throws FileNotFoundException {
+    public static void sumujIZapisz(String nazwaPliku, String nazwaPlikuWyj) throws IOException {
 
 
         File plik = new File(nazwaPliku);
         File plikwyjs = new File(nazwaPlikuWyj);
-        PrintWriter zapis = new PrintWriter(nazwaPlikuWyj);
-        PrintWriter zapis2 = new PrintWriter(nazwaPlikuWyj);
         StringBuilder text = new StringBuilder();
         Scanner scanner = new Scanner(plik);
         while (scanner.hasNext()) {
@@ -31,7 +29,7 @@ public class zadanie6_3 {
         int suma = 0;
 
         System.out.println(text2);
-        String[] tablicaZnakow = text2.split("[a-z]");
+        String[] tablicaZnakow = text2.split("\\D");
 
         for (String znaki : tablicaZnakow) {
             if (znaki.isEmpty()) {
@@ -41,22 +39,27 @@ public class zadanie6_3 {
             suma = cyfry + suma;
         }
         suma = suma + 1;
-
-        zapis.println("suma liczb w tekscie wynosi test2 : " + suma);
-        zapis.close();
-
-        StringBuilder textwyj = new StringBuilder();
-        scanner = new Scanner(plikwyjs);
-        while (scanner.hasNext()) {
-            textwyj.append(scanner.nextLine());
-        }
-        String tekstwyjs = textwyj.toString();
-        System.out.println(tekstwyjs);
-        if (!tekstwyjs.isEmpty()) {
-            suma = suma + suma;
-            zapis2.println("ponowne uruchomienie suma wynosi : " + suma);
+        if (!plikwyjs.exists()) {
+            PrintWriter zapis = new PrintWriter(nazwaPlikuWyj);
+            zapis.println("suma liczb w tekscie wynosi : " + suma);
+            zapis.close();
+        } else {
+            StringBuilder textwyj = new StringBuilder();
+            scanner = new Scanner(plikwyjs);
+            while (scanner.hasNext()) {
+                textwyj.append(scanner.nextLine());
+            }
+            String znaki2 = "";
+            String tekstwyjs = textwyj.toString();
+            String[] tablicaZnakow2 = tekstwyjs.split("\\D");
+            for (String znaki : tablicaZnakow2){
+                znaki2 = znaki;
+            }
+            int znaki3 = Integer.parseInt(znaki2);
+            suma = znaki3 + suma;
+            PrintWriter zapis2 = new PrintWriter(nazwaPlikuWyj);
+            zapis2.println("suma liczb w w tekscie wynosi : " + suma);
             zapis2.close();
-            System.out.println(suma);
         }
     }
 }
