@@ -23,7 +23,7 @@ public class zadanie6_4 {
     public static void encrypting(String fileToEncrypt, int move) throws IOException {
         int zero;
         File file = new File(fileToEncrypt);
-//        String fileEncrypted = "_dane.txt";
+
         FileReader readingFile = new FileReader(file);
         StringBuilder chainText = new StringBuilder();
         String fileEncrypted = "_dane.txt";
@@ -48,12 +48,12 @@ public class zadanie6_4 {
     }
 
     public static void decrypting(String fileEncrypted, int move) throws IOException {
+
         int zero;
         File file = new File(fileEncrypted);
         move = -move;
         String fileDecrypted2 = "dane_test.txt";
-        File file2Test = new File(fileDecrypted2);
-        FileReader readingFile = new FileReader(file2Test);
+        FileReader readingFile = new FileReader(file);
         StringBuilder chainText = new StringBuilder();
         FileWriter fileWrite = new FileWriter(fileDecrypted2);
         while ((zero = readingFile.read()) != -1) {
@@ -64,7 +64,7 @@ public class zadanie6_4 {
                 char character = (char) (96 + (move - 122 + zero));
                 chainText.append(character);
             } else if (zero + move < 97) {
-                char character = (char) (123 - ((-move) + (zero - 97)));
+                char character = (char) (125 - ((-move) + (zero - 97)));
                 chainText.append(character);
             } else {
                 char character = (char) (zero + move);
