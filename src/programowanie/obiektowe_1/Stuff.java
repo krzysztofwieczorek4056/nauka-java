@@ -2,18 +2,19 @@ package programowanie.obiektowe_1;
 
 public class Stuff {
     private String name;
-    private int weight;
+    public int weight;
 
-    public Stuff() {
+    public Stuff(String name, int weight) {
         this.name = name;
         this.weight = weight;
     }
 
     @Override
     public String toString() {
-        System.out.println(name +" "+ weight);
-        return null;
+        return name + " " + weight;
     }
 
-
 }
+
+
+
