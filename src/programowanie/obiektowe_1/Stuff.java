@@ -2,7 +2,7 @@ package programowanie.obiektowe_1;
 
 public class Stuff {
     private String name;
-    public int weight;
+    private int weight;
 
     public Stuff(String name, int weight) {
         this.name = name;
